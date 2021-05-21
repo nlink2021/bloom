@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Bloom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+---
+A website for burgeoning content creators on websites like Youtube or Twitch looking to grow their channel through networking and a growing fan base.
 
-In the project directory, you can run:
 
-### `yarn start`
+## User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
+1. The user arrives on the landing page and sees the main headline, with links to login and signup.
+2. The user will also notice a list of content creators, with the online/live streamers at the top, while the offline streamers are near the bottom. There is also a link to the given streamers location website.
+3. The login/logout tabs take you to their respective areas and the tabs change accordingly to whether or not you are logged in.
+4. When a user signs up, they can choose whether they are making a general fan profile, or a content creator profile.
+5. When they choose a content creator as their profile type, their profile will have a couple more features, such as creating a community.
+6. When the user navigates to the community list, they will see a grand list of communities, with the most "fans" at the top.
+7. These community buttons will take the user to that community's page
+8. The community pages contain general info about the streamer, where to find them, with links chosen by the creator who made the community.
+9. The section also includes a forum area where the creator can sticky posts and fans can post whatever topics they went, with full comment areas for each, however they must be a fan first.
+10. The general profile area contains general info, and who that person is a fan of. Creators can also be fans of other creators!
+11. Creators have an additional option to post their social media links and make a community.
+12. The make-a-community form asks certain questions regarding the type of streaming they do, what they want to name the community, as well as other personalization options.
+13. Once all the info is filled out, the streamer will see their community shown off in the community list, and people can start becoming fans!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ 
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes & ERD
 
-### `yarn build`
+---
+![ERD](/bloomERD.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Wireframe](/bloomhome.PNG)
+![Wireframe](/bloomlog.PNG)
+![Wireframe](/bloomsignup.PNG)
+![Wireframe](/bloomcomlist.PNG)
+![Wireframe](/bloomcommunity.PNG)
+![Wireframe](/bloomprofile.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Routes Inventory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Route       | Description |
+| ----------- | ----------- |
+| POST /users/signup | add a new user to users table |
+| POST /users/login  | send info to back to check password and send user info to the front |
+| GET /users/verify | get user info to display profile | 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## MVP Checklist
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
+- Login/Logout functionality
+    - JWT and hashing
+- Nav Bar and page switching/hiding (Routes/Redirects)
+- profile creation and types
+- community creation and community lists
+- CRUD on forum areas
+- live interactions on the home page
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Stretch Goals
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+- special creator/admin abilities to delete posts from their own communities
+- sticky posts on forum
+- fan counts
+- filter options on the community list
+- liking and becoming a fan interactions
+- extra sign-up options in the forms
